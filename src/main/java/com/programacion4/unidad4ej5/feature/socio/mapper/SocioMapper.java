@@ -1,13 +1,13 @@
 package com.programacion4.unidad4ej5.feature.socio.mapper;
 
-import com.programacion4.unidad4ej5.feature.socio.dtos.request.SocioCreateDto;
+import com.programacion4.unidad4ej5.feature.socio.dtos.request.SocioCreateRequestDto;
 import com.programacion4.unidad4ej5.feature.socio.dtos.response.SocioResponseDto;
 import com.programacion4.unidad4ej5.feature.socio.models.Socio;
 import org.springframework.stereotype.Component;
 
 @Component
 public class SocioMapper {
-    public Socio toEntity(SocioCreateDto dto) {
+    public static Socio toEntity(SocioCreateRequestDto dto) {
         Socio socio = new Socio();
         socio.setNombre(dto.getNombre());
         socio.setApellido(dto.getApellido());
@@ -18,7 +18,7 @@ public class SocioMapper {
         return socio;
     }
 
-    public SocioResponseDto toResponseDto(Socio socio) {
+    public static SocioResponseDto toResponseDto(Socio socio) {
         SocioResponseDto dto = new SocioResponseDto();
         dto.setId(socio.getId());
         dto.setNombre(socio.getNombre());

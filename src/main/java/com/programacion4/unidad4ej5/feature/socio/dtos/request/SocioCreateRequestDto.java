@@ -10,7 +10,7 @@ import java.time.LocalDate;
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
-public class SocioCreateDto {
+public class SocioCreateRequestDto {
     @NotBlank(message = "El nombre es obligatorio.")
     private String nombre;
 
@@ -28,6 +28,6 @@ public class SocioCreateDto {
     @Past(message = "La fecha de nacimiento debe ser en el pasado")
     private LocalDate fechaNacimiento;
 
-    @Pattern(regexp = "\\+\\d{7,15}", message = "El teléfono debe seguir el formato internacional")
+    @Pattern(regexp = "\\+\\d{7,15}", message = "El teléfono debe seguir el formato internacional.")
     private String telefono;
 }
