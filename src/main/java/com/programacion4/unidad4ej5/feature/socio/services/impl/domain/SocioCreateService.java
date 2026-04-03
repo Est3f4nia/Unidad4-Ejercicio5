@@ -17,7 +17,7 @@ import org.springframework.stereotype.Service;
 @AllArgsConstructor
 public class SocioCreateService implements ISocioCreateService {
     private final ISocioRepository socioRepository;
-    private IFechaValidationService fechaValidationService;
+    private final IFechaValidationService fechaValidationService;
 
     @Override
     public SocioResponseDto create(SocioCreateRequestDto dto) {
