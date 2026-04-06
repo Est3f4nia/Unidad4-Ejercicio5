@@ -2,7 +2,7 @@ package com.programacion4.unidad4ej5.feature.socio.controllers;
 
 import com.programacion4.unidad4ej5.feature.socio.dtos.request.SocioCreateRequestDto;
 import com.programacion4.unidad4ej5.feature.socio.dtos.response.SocioResponseDto;
-import com.programacion4.unidad4ej5.feature.socio.services.interfaces.ISocioCreateService;
+import com.programacion4.unidad4ej5.feature.socio.services.interfaces.domain.ISocioCreateService;
 import jakarta.validation.Valid;
 import lombok.AllArgsConstructor;
 import org.springframework.http.HttpStatus;

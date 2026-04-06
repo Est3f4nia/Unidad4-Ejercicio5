@@ -1,5 +1,6 @@
 package com.programacion4.unidad4ej5.feature.socio.dtos.request;
 
+import com.programacion4.unidad4ej5.shared.validation.annotations.Adulto;
 import jakarta.validation.constraints.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -26,8 +27,9 @@ public class SocioCreateRequestDto {
 
     @NotNull(message = "La fecha de nacimiento es obligatoria")
     @Past(message = "La fecha de nacimiento debe ser en el pasado")
+    @Adulto
     private LocalDate fechaNacimiento;
 
-    @Pattern(regexp = "\\+\\d{7,15}", message = "El teléfono debe seguir el formato internacional.")
+    @Pattern(regexp = "\\+\\d{7,15}", message = "El teléfono debe seguir el formato internacional")
     private String telefono;
 }

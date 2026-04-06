@@ -9,11 +9,10 @@ import java.time.LocalDate;
 @NoArgsConstructor
 @AllArgsConstructor
 public class SocioResponseDto {
-    private Long id;
+    private String dni;
     private String nombre;
     private String apellido;
     private String email;
-    private String dni;
     private LocalDate fechaNacimiento;
-    private Integer telefono;
+    private String telefono;
 }

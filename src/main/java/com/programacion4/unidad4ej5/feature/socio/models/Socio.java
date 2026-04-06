@@ -5,8 +5,8 @@ import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
-
 import java.time.LocalDate;
+
 
 @Entity
 @Table(name = "socios")
@@ -16,12 +16,11 @@ import java.time.LocalDate;
 @AllArgsConstructor
 public class Socio {
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+    private String dni;
+
     private String nombre;
     private String apellido;
     private String email;
-    private String dni;
     private LocalDate fechaNacimiento;
     private String telefono;
 }

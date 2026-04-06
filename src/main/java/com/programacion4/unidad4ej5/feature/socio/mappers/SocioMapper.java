@@ -1,4 +1,4 @@
-package com.programacion4.unidad4ej5.feature.socio.mapper;
+package com.programacion4.unidad4ej5.feature.socio.mappers;
 
 import com.programacion4.unidad4ej5.feature.socio.dtos.request.SocioCreateRequestDto;
 import com.programacion4.unidad4ej5.feature.socio.dtos.response.SocioResponseDto;
@@ -20,10 +20,12 @@ public class SocioMapper {
 
     public static SocioResponseDto toResponseDto(Socio socio) {
         SocioResponseDto dto = new SocioResponseDto();
-        dto.setId(socio.getId());
+        dto.setDni(socio.getDni());
         dto.setNombre(socio.getNombre());
         dto.setApellido(socio.getApellido());
         dto.setFechaNacimiento(socio.getFechaNacimiento());
+        dto.setTelefono(socio.getTelefono());
+        dto.setEmail(socio.getEmail());
         return dto;
     }
 }
