@@ -7,4 +7,5 @@ import org.springframework.stereotype.Repository;
 @Repository
 public interface ISocioRepository extends CrudRepository<Socio, Long> {
     boolean existsByDni(String dni);
+    Socio findByDni(String dni);
 }

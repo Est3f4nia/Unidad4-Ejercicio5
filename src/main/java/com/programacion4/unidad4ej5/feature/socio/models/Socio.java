@@ -23,4 +23,6 @@ public class Socio {
     private String email;
     private LocalDate fechaNacimiento;
     private String telefono;
+    private String alias;
+    private String urlFoto;
 }
