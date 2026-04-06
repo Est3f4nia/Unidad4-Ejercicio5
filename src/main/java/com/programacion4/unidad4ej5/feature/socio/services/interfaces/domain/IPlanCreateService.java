@@ -1,4 +1,4 @@
-package com.programacion4.unidad4ej5.feature.socio.services.interfaces;
+package com.programacion4.unidad4ej5.feature.socio.services.interfaces.domain;
 
 import com.programacion4.unidad4ej5.feature.socio.dtos.request.PlanCreateRequestDto;
 import com.programacion4.unidad4ej5.feature.socio.dtos.response.PlanResponseDto;

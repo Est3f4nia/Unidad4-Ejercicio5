@@ -3,11 +3,11 @@ package com.programacion4.unidad4ej5.feature.socio.services.impl.domain;
 import com.programacion4.unidad4ej5.config.exceptions.BadRequestException;
 import com.programacion4.unidad4ej5.feature.socio.dtos.request.PlanCreateRequestDto;
 import com.programacion4.unidad4ej5.feature.socio.dtos.response.PlanResponseDto;
-import com.programacion4.unidad4ej5.feature.socio.mapper.PlanMapper;
+import com.programacion4.unidad4ej5.feature.socio.mappers.PlanMapper;
 import com.programacion4.unidad4ej5.feature.socio.models.Plan;
 import com.programacion4.unidad4ej5.feature.socio.repositories.IPlanRepository;
-import com.programacion4.unidad4ej5.feature.socio.repositories.ISocioRepository;
-import com.programacion4.unidad4ej5.feature.socio.services.interfaces.IPlanCreateService;
+import com.programacion4.unidad4ej5.feature.socio.services.interfaces.common.IDniValidationService;
+import com.programacion4.unidad4ej5.feature.socio.services.interfaces.domain.IPlanCreateService;
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
 
@@ -15,11 +15,11 @@ import org.springframework.stereotype.Service;
 @AllArgsConstructor
 public class PlanCreateService implements IPlanCreateService {
     private final IPlanRepository planRepository;
-    private final ISocioRepository socioRepository;
+    private final IDniValidationService dniValidationService;
 
     @Override
     public PlanResponseDto create(PlanCreateRequestDto dto) {
-        if (!socioRepository.existsByDni(dto.getSocioDni())) {
+        if (!dniValidationService.dniExists(dto.getSocioDni())) {
             throw new BadRequestException("El DNI del socio no está registrado");
         }
 

@@ -1,13 +1,12 @@
 package com.programacion4.unidad4ej5.feature.socio.models;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.Table;
+import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
-
 import java.util.List;
+
 
 @Entity
 @Table(name = "planes")
@@ -16,6 +15,10 @@ import java.util.List;
 @NoArgsConstructor
 @AllArgsConstructor
 public class Plan {
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long idPlan;
+
     private String socioDni;
     private String obj;
     private Integer frecS;
